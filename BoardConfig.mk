@@ -104,6 +104,7 @@ PLATFORM_VERSION := 16.1.0
 #Crypto
 TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
+
 # Debug
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
@@ -112,7 +113,7 @@ TWRP_EVENT_LOGGING := false
 #TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := X205XXS3CWG1
+TW_DEVICE_VERSION := X200XXS3CWG2
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
 TW_INPUT_BLACKLIST := "hbtp_vm"
