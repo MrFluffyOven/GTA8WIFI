@@ -7,6 +7,7 @@ ro.product.system.model=SM-X200
 ro.boot.bootdevice=7824900.sdhci
 ro.boot.dynamic_partitions=true
 ro.secure=0
+security.perf_harden=0
 ro.adb.secure=0
 ro.debuggable=1
 persist.sys.usb.config=adb,mtp
