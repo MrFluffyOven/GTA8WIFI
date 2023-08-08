@@ -8,5 +8,4 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_gta8wifi.mk
 
-COMMON_LUNCH_CHOICES := \
-    twrp_gta8wifi-eng
+COMMON_LUNCH_CHOICES := twrp_gta8wifi-eng
