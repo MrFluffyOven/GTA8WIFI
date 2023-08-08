@@ -21,6 +21,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl.recovery \
     bootctrl.$(PRODUCT_PLATFORM) \
     bootctrl.$(PRODUCT_PLATFORM).recovery \
+android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
 
 # fastbootd
 PRODUCT_PACKAGES += \
