@@ -65,7 +65,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive androidboot.init_fatal_reboot_target=recovery
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_BOOT_HEADER_NAME := SRPUI28B001
