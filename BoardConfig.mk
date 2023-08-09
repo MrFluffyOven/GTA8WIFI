@@ -149,6 +149,7 @@ TWRP_EVENT_LOGGING := false
 #TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 
 # TWRP specific build flags
+TW_DEVICE_VERSION := X200XXS3CWG2
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
 TW_INPUT_BLACKLIST := "hbtp_vm"
