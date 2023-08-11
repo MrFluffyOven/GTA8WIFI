@@ -59,11 +59,15 @@
 /dev/block/by-name/pm_sys                /pmsys              emmc    defaults    defaults
 
 /dev/block/by-name/misc                  /misc               emmc    defaults    defaults
-/dev/block/by-name/boot                  /boot               emmc    defaults    defaults
-/dev/block/by-name/recovery              /recovery           emmc    defaults    defaults
+/dev/block/by-name/boot                  /boot               emmc    defaults    defaults    flags=backup=1;display="Boot";flashimg=1
+/dev/block/by-name/recovery              /recovery           emmc    defaults    defaults    flags=backup=1;display="Recovery";flashimg=1
 /dev/block/by-name/persist               /persist            emmc    defaults    defaults
 /dev/block/by-name/logo                  /logo               emmc    defaults    defaults
 /dev/block/by-name/fbootlogo             /fbootlogo          emmc    defaults    defaults
+
+/dev/block/by-name/metadata /metadata    ext4   nodev,noatime,nosuid,errors=panic	wait,formattable,first_stage_mount,check
+/dev/block/by-name/cache    /cache       ext4   noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc	wait,check
+/dev/block/by-name/userdata /data        f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	latemount,wait,encryptable,check,reservedsize=128M,checkpoint=fs,,quota
 
 system /system ext4 ro,barrier=1 wait,avb=vbmeta_system,logical,first_stage_mount
 system_ext /system_ext ext4 ro,barrier=1 wait,avb=vbmeta_system_ext,logical,first_stage_mount
@@ -80,7 +84,3 @@ BOARD_ANDROID_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm
 # Removable storage
 /external_sd    vfat        /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
 /usb-otg       vfat        /dev/block/sda1         /dev/block/sda        flags=display="USB-OTG";storage;wipeingui;removable
-
-/dev/block/by-name/metadata /metadata    ext4   nodev,noatime,nosuid,errors=panic	wait,formattable,first_stage_mount,check
-/dev/block/by-name/cache    /cache       ext4   noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc	wait,check
-/dev/block/by-name/userdata /data        f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	latemount,wait,encryptable,check,reservedsize=128M,checkpoint=fs,,quota
