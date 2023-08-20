@@ -1,9 +1,15 @@
 
 # Logical partitions
-system         /system     ext4    display="System"
-system_ext     /system_ext ext4    display="System_EXT"
-vendor         /vendor     ext4    display="Vendor"
-product        /product    ext4    display="Product"
+system	/system		ext4								flags=display="System";logical;
+system_ext   /system_ext   ext4       flags=display="System_ext";logical;
+vendor	/vendor		ext4								flags=display="Vendor";logical;
+product	/product	ext4								flags=display="Product";logical;
+odm		/odm		ext4								flags=display="ODM";logical;
+
+# Symlinked partitions
+/system_image	emmc		/dev/block/dm-0					flags=backup=1;wipeingui;flashimg=1;display="System Image";
+/vendor_image	emmc		/dev/block/dm-2					flags=backup=1;wipeingui;flashimg=1;display="Vendor Image";
+/product_image	emmc		/dev/block/dm-1					flags=backup=1;wipeingui;flashimg=1;display="Product Image";
 
 # Physical partitions
 /boot          emmc        /dev/block/by-name/boot                       flags=backup=1;display="Boot";flashimg=1
