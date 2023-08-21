@@ -65,8 +65,8 @@ product					/product	ext4	ro,barrier=1				wait,logical,first_stage_mount
 /dev/block/by-name/pm_sys                /pmsys              emmc    defaults    defaults
 
 /dev/block/by-name/misc                  /misc               emmc    defaults    defaults
-/dev/block/by-name/boot                  /boot               emmc    defaults    defaults    flags=backup=1;display="Boot";flashimg=1
-/dev/block/by-name/recovery              /recovery           emmc    defaults    defaults    flags=backup=1;display="Recovery";flashimg=1
+/dev/block/by-name/boot                  /boot               emmc    defaults    recoveryonly    flags=backup=1;display="Boot";flashimg=1
+/dev/block/by-name/recovery              /recovery           emmc    defaults    recoveryonly    flags=backup=1;display="Recovery";flashimg=1
 /dev/block/by-name/persist               /persist            emmc    defaults    defaults
 /dev/block/by-name/logo                  /logo               emmc    defaults    defaults
 /dev/block/by-name/fbootlogo             /fbootlogo          emmc    defaults    defaults
