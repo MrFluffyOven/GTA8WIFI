@@ -21,6 +21,7 @@ odm		/odm		ext4								flags=display="ODM";logical;
 /param		emmc		/dev/block/platform/bootdevice/by-name/param		flags=backup=1;display="Param";
 /optics_image	emmc		/dev/block/platform/bootdevice/by-name/optics	flags=backup=1;flashimg=1;display="Optics Image";
 /prism_image	emmc		/dev/block/platform/bootdevice/by-name/prism	flags=backup=1;flashimg=1;display="Prism Image";
+/dtbo		emmc		/dev/block/platform/bootdevice/by-name/dtbo
 
 # Removable storage
 /external_sd   auto        /dev/block/mmcblk1p1    /dev/block/mmcblk1    flags=display="Micro SD car d";storage;wipeingui;removable
