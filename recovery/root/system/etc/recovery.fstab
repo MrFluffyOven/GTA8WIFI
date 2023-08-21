@@ -73,7 +73,7 @@ product					/product	ext4	ro,barrier=1				wait,logical,first_stage_mount
 
 /dev/block/by-name/metadata /metadata    ext4   nodev,noatime,nosuid,errors=panic	wait,formattable,first_stage_mount,check
 /dev/block/by-name/cache    /cache       ext4   noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc	wait,check
-/dev/block/platform/bootdevice/by-name/userdata	/data		f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678
+/dev/block/by-name/userdata	/data		f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678
 
 # Removable storage
 /external_sd    auto        /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
