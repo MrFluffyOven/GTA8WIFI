@@ -13,15 +13,15 @@ odm		/odm		ext4								flags=display="ODM";logical;
 /odm_image		emmc		/dev/block/dm-3					flags=backup=1;flashimg=1;wipeingui;display="ODM Image";
 
 # Physical partitions
-/metadata	ext4		/dev/block/platform/bootdevice/by-name/md_udc		flags=backup=1;display="Metadata";
-/boot		emmc		/dev/block/platform/bootdevice/by-name/boot			flags=backup=1;flashimg=1;display="Boot";
-/recovery	emmc		/dev/block/platform/bootdevice/by-name/recovery		flags=backup=1;flashimg;display="Recovery";
-/data		f2fs		/dev/block/platform/bootdevice/by-name/userdata		flags=wipeingui;
-/cache		ext4		/dev/block/platform/bootdevice/by-name/cache		flags=backup=1;display="Cache";
-/dtbo		emmc		/dev/block/platform/bootdevice/by-name/dtbo			flags=backup=1;flashimg=1;display="DTBO";
-/param		emmc		/dev/block/platform/bootdevice/by-name/param		flags=backup=1;display="Param";
-/optics_image	emmc		/dev/block/platform/bootdevice/by-name/optics	flags=backup=1;flashimg=1;display="Optics Image";
-/prism_image	emmc		/dev/block/platform/bootdevice/by-name/prism	flags=backup=1;flashimg=1;display="Prism Image";
+/metadata	ext4		/dev/block/by-name/md_udc		flags=backup=1;display="Metadata";
+/boot		emmc		/dev/block/by-name/boot			flags=backup=1;flashimg;display="Boot";
+/recovery	emmc		/dev/block/by-name/recovery		flags=backup=1;flashimg;display="Recovery";
+/data		f2fs		/dev/block/by-name/userdata		flags=wipeingui;
+/cache		ext4		/dev/block/by-name/cache		flags=backup=1;display="Cache";
+/dtbo		emmc		/dev/block/by-name/dtbo			flags=backup=1;flashimg=1;display="DTBO";
+/param		emmc		/dev/block//by-name/param		flags=backup=1;display="Param";
+/optics_image	emmc		/dev/block/by-name/optics	flags=backup=1;flashimg=1;display="Optics Image";
+/prism_image	emmc		/dev/block/by-name/prism	flags=backup=1;flashimg=1;display="Prism Image";
 
 # Removable storage
 /external_sd   auto        /dev/block/mmcblk1p1    /dev/block/mmcblk1    flags=display="Micro SD car d";storage;wipeingui;removable
