@@ -77,4 +77,4 @@ product					/product	ext4	ro,barrier=1				wait,logical,first_stage_mount
 
 # Removable storage
 /external_sd    auto        /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
-/usb-otg       vfat        /dev/block/sda1         /dev/block/sda        flags=display="USB-OTG";storage;wipeingui;removable
+/usb-otg       auto        /dev/block/sda1         /dev/block/sda        flags=display="USB-OTG";storage;wipeingui;removable
