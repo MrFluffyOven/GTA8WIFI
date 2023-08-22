@@ -16,7 +16,7 @@ odm		/odm		ext4								flags=display="ODM";logical;
 /metadata	ext4		/dev/block/by-name/md_udc		flags=backup=1;display="Metadata";
 /boot		emmc		/dev/block/by-name/boot			flags=backup=1;flashimg;display="Boot";
 /recovery	emmc		/dev/block/by-name/recovery		flags=backup=1;flashimg;display="Recovery";
-/data		f2fs		/dev/block/by-name/userdata		flags=wipeingui;
+/data		f2fs		/dev/block/by-name/userdata		flags=wipeingui;display="Data"
 /cache		ext4		/dev/block/by-name/cache		flags=backup=1;display="Cache";
 /dtbo		emmc		/dev/block/by-name/dtbo			flags=backup=1;flashimg=1;display="DTBO";
 /param		emmc		/dev/block//by-name/param		flags=backup=1;display="Param";
