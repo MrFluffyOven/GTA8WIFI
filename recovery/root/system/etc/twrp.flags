@@ -1,9 +1,9 @@
 
 # Logical partitions
-system         /system     ext4    display="System"
-system_ext     /system_ext ext4    display="System_EXT"
-vendor         /vendor     ext4    display="Vendor"
-product        /product    ext4    display="Product"
+system         /system     ext4    display="System";logical
+system_ext     /system_ext ext4    display="System_EXT";logical
+vendor         /vendor     ext4    display="Vendor";logical
+product        /product    ext4    display="Product";logical
 
 # Physical partitions
 /boot          emmc        /dev/block/by-name/boot                       flags=backup=1;display="Boot";flashimg=1
