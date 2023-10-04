@@ -5,15 +5,13 @@
 
 To initialize your local repository using the AOSP trees to build TWRP, use a command like this:
 
-```sh
-repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-```
-Then to sync up:
+# twrp 12.1 Manifest
+    repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
 
-```sh
-repo sync
-```
-Then to build:
+# Sync
+    repo sync
 
-```sh
-export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
+# build:
+    export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
+# Multidisabler
+    Boot twrp, Wipe data, Reboot Recovery, go to twrp terminal, type "multidisabler" hit enter/return , Wipe data again, Encryption should be Disabled
