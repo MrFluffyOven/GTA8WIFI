@@ -2,9 +2,6 @@
 
 ## How-to compile it:
 
-
-## Build twrp
-
 # twrp 12.1 Manifest
     repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
 # Sync
