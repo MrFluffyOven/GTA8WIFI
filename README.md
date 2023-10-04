@@ -3,7 +3,9 @@
 ## How-to compile it:
 
 
-To initialize your local repository using the AOSP trees to build TWRP, use a command like this:
+## Build twrp
+# Clone Magendanz twrp tree
+    git clone https://github.com/MrFluffyOven/gta8wifi_magendanz_fork.git -b twrp-12.1
 
 # twrp 12.1 Manifest
     repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
