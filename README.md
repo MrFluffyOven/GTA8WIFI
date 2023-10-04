@@ -7,13 +7,10 @@
 
 # twrp 12.1 Manifest
     repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-
-# Clone Magendanz twrp tree
-    git clone https://github.com/MrFluffyOven/gta8wifi_magendanz_fork.git -b twrp-12.1 device/samsung/gta8wifi
-
 # Sync
     repo sync
-
+# Clone Magendanz twrp tree
+    git clone https://github.com/MrFluffyOven/gta8wifi_magendanz_fork.git -b twrp-12.1 device/samsung/gta8wifi
 # build:
     export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
 # Multidisabler
