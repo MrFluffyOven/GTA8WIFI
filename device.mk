@@ -21,6 +21,8 @@ PRODUCT_PACKAGES += \
 
 # vulkan
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:
+
+# Test Seperator
 $(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml
 
 # Soong namespaces
