@@ -20,7 +20,7 @@ PRODUCT_PACKAGES += \
     bootctrl.$(PRODUCT_PLATFORM).recovery \
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:
-$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.1_1.xml
+$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
