@@ -5,12 +5,10 @@ system_ext     /system_ext ext4    display="System_EXT"
 vendor         /vendor     ext4    display="Vendor"
 product        /product    ext4    display="Product"
 
-# Syslinked Partitions
-/system_image   emmc    /dev/block/dm0              ro           flags=display="System Image";flashimg=1;backup=1;
-/vendor_image   emmc    /dev/block/dm2              ro           flags=display="Vendor Image";flashimg=1;backup=1;
-/product_image  emmc    /dev/block/dm3              ro           flags=display="Product Image";flashimg=1;backup=1;
-
-
+# Symlinked partitions
+/system_image	emmc		/dev/block/dm-0					flags=backup=1;wipeingui;flashimg=1;display="System Image";
+/vendor_image	emmc		/dev/block/dm-2					flags=backup=1;wipeingui;flashimg=1;display="Vendor Image";
+/product_image	emmc		/dev/block/dm-3
 # Physical partitions
 /boot          emmc        /dev/block/by-name/boot                       flags=backup=1;display="Boot";flashimg=1
 /recovery      emmc        /dev/block/by-name/recovery                   flags=backup=1;display="Recovery";flashimg=1
