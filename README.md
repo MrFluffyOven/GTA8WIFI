@@ -7,7 +7,7 @@
 ## Sync
     repo sync
 ## Clone Magendanz twrp tree
-    git clone https://github.com/MrFluffyOven/gta8wifi_magendanz_fork.git -b twrp-12.1 device/samsung/gta8wifi
+    git clone https://github.com/MrFluffyOven/android_device_samsung_gta8wifi.git -b twrp-12.1 device/samsung/gta8wifi
 ## build:
     export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
 ## Multidisabler
