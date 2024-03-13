@@ -2,6 +2,16 @@
 import /init.recovery.common.rc
 
 # We need vold early for metadata encryption
+on early-init
+    start linkblobs
+    start vold
+    
+
+on init
+    start vendor.qseecomd
+    start boot-hal-1-1
+    setprop prepdecrypt.loglevel 2
+
 on early-fs
     start vold
 
@@ -18,3 +28,35 @@ on late-fs
 
     # Mount RW partitions which need run fsck
     mount_all /system/etc/recovery.fstab --late
+
+    on boot
+    start health-hal-2-1
+
+on property:vendor.sys.listeners.registered=true
+    start keymaster-4-1
+    start gatekeeper-1-0
+
+service vendor.qseecomd /vendor/bin/qseecomd
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+    service linkblobs /system/bin/linkblobs.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
