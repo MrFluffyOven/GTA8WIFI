@@ -32,9 +32,6 @@ on late-fs
     on boot
     start health-hal-2-1
 
-on property:ro.crypto.state=unencrypted
-    start prepdecrypt
-
     on property:ro.crypto.state=unsupported
     stop sbinqseecomd
     stop keymaster-4-0
