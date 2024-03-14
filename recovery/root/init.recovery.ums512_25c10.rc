@@ -29,30 +29,8 @@ on late-fs
     # Mount RW partitions which need run fsck
     mount_all /system/etc/recovery.fstab --late
 
-    on property:ro.crypto.state=unsupported
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:ro.crypto.state=unencrypted
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:twrp.decrypt.done=true
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
 on boot
     start health-hal-2-1
-
 
 on property:vendor.sys.listeners.registered=true
     start keymaster-4-1

@@ -32,7 +32,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd \
     android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
