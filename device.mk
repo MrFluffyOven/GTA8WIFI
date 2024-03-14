@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # Fastbootd
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     fastbootd \
     android.hardware.fastboot@1.0-impl-mock \
 
