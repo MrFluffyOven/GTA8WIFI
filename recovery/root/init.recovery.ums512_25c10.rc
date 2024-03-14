@@ -29,6 +29,9 @@ on late-fs
     # Mount RW partitions which need run fsck
     mount_all /system/etc/recovery.fstab --late
 
+on property:ro.crypto.state=unencrypted
+    start prepdecrypt
+
     on boot
     start health-hal-2-1
 
