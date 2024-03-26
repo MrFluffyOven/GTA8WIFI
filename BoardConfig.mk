@@ -98,6 +98,7 @@ BOARD_KERNEL_PAGESIZE := 2048
     persist \
     sec_efs \
     firmware
+
 # Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 0x191C00000
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
