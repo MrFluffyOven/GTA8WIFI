@@ -61,12 +61,11 @@ TARGET_NO_RADIOIMAGE := true
 # Platform
 TARGET_BOARD_PLATFORM := ums512
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-#TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 \
                         androidboot.selinux=enforce \
-                        androidboot.init_fatal_reboot_target=recovery \
+                        androidboot.init_fatal_reboot_target=recovery 
 
 
 # Kernel
