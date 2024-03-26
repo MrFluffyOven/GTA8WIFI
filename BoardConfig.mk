@@ -64,8 +64,11 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 #TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
-BOARD_KERNEL_CMDLINE += androidboot.selinux=enforce androidboot.init_fatal_reboot_target=recovery
+BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 \
+                        androidboot.selinux=enforce \
+                        androidboot.init_fatal_reboot_target=recovery \
+
+BOARD_KERNEL_CMDLINE +=  androidboot.init_fatal_reboot_target=recovery
 
 # Kernel
 TARGET_KERNEL_ARCH := $(TARGET_ARCH)
