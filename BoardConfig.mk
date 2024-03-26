@@ -68,7 +68,6 @@ BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 \
                         androidboot.selinux=enforce \
                         androidboot.init_fatal_reboot_target=recovery \
 
-BOARD_KERNEL_CMDLINE +=  androidboot.init_fatal_reboot_target=recovery
 
 # Kernel
 TARGET_KERNEL_ARCH := $(TARGET_ARCH)
@@ -136,10 +135,6 @@ TARGET_COPY_OUT_PRODUCT := product
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
 # Encryption
-TW_INCLUDE_CRYPTO := false
-TW_INCLUDE_CRYPTO_FBE := false
-TW_INCLUDE_FBE_METADATA_DECRYPT := false
-BOARD_USES_METADATA_PARTITION := true
 TARGET_KEYMASTER_VARIANT := samsung
 TW_USE_FSCRYPT_POLICY := 1
 
