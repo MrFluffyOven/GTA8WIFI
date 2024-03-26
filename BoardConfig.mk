@@ -109,7 +109,6 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor prod
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 
 # System as root
-#BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # File systems
@@ -135,6 +134,7 @@ TARGET_COPY_OUT_PRODUCT := product
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
 # Encryption
+BOARD_USES_METADATA_PARTITION := true
 TARGET_KEYMASTER_VARIANT := samsung
 TW_USE_FSCRYPT_POLICY := 1
 
