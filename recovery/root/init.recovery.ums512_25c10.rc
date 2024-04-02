@@ -35,27 +35,37 @@ on property:vendor.sys.listeners.registered=true
     start keymaster-4-1
     start gatekeeper-1-0
 
-service vendor.qseecomd /vendor/bin/qseecomd
+service keymaster-4-1 /system/bin/hw/android.hardware.keymaster@4.1-service
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
 
-service keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-service
+service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    service vendor.sprd.hardware.trusty@1.0-service /system/bin/hw/vendor.sprd.hardware.trusty@1.0-service
+    class hal
     user root
     group root
-    disabled
-    seclabel u:r:recovery:s0
 
-    service linkblobs /system/bin/linkblobs.sh
+    service vendor.thermal-hal-2-0 /system/bin/hw/vendor.sprd.hardware.thermal@2.0-service
+    class hal
+    user system
+    group system
+
+    service health-hal-2-1-samsung /vendor/bin/hw/android.hardware.health@2.1-service-samsung
+    class hal charger
     user root
     group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
+    capabilities WAKE_ALARM
+    file /dev/kmsg w
+
+    service keystore2 /system/bin/keystore2 /data/misc/keystore
+    class early_hal
+    user keystore
+    group keystore readproc log 5666 5678
+    task_profiles ProcessCapacityHigh
