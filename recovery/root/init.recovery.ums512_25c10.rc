@@ -69,3 +69,12 @@ service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service
     user keystore
     group keystore readproc log 5666 5678
     task_profiles ProcessCapacityHigh
+
+on post-fs
+    mkdir /mnt/vendor/efs/DAK 0775 root root
+    restorecon -R /mnt/vendor/efs/DAK
+    chown root root /mnt/vendor/efs/DAK/gakkeybox
+    chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
+
+on post-fs-data
+    mkdir /data/vendor/keymaster 0775 root root
