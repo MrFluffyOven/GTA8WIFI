@@ -1,61 +1,51 @@
-# Add for board init.rc for recovery mode
+#add for board init.rc for recovery mode
 import /init.recovery.common.rc
 
 # We need vold early for metadata encryption
-on early-init
-    start linkblobs
-    start vold
-    start keymaster-4-1
-    start gatekeeper-1-0
-
-on init
-    setprop prepdecrypt.loglevel 2
 
 on early-fs
+    start vendor.keymaster-4-0
+    start vendor.gatekeeper-1-0
+    start vendor.sprd.hardware.trusty@1.0-service
     start vold
 
+
+
 on fs
+
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
+
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
     
+
     export ANDROID_ROOT /system_root
 
+
+
 on late-fs
+
    … 
+
     # Wait for keymaster
+
     exec_start wait_for_keymaster
 
+
+
     # Mount RW partitions which need run fsck
+
     mount_all /system/etc/recovery.fstab --late
 
-on boot
-    start health-hal-2-1
+on post-fs
+    mkdir /mnt/vendor/efs/DAK 0775 root root
+    restorecon -R /mnt/vendor/efs/DAK
+    chown system system /mnt/vendor/efs/DAK/gakkeybox
+    chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
 
-on property:vendor.sys.listeners.registered=true
-    start keymaster-4-1
-    start gatekeeper-1-0
-
-service keymaster-4-1 /system/bin/hw/android.hardware.keymaster@4.1-service
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-    service vendor.sprd.hardware.trusty@1.0-service /system/bin/hw/vendor.sprd.hardware.trusty@1.0-service
-    class hal
-    user root
-    group root
-
-    service vendor.thermal-hal-2-0 /system/bin/hw/vendor.sprd.hardware.thermal@2.0-service
-    class hal
-    user system
-    group system
+    start health-hal-2-1-samsung
+on post-fs-data
+    mkdir /data/vendor/keymaster 0775 root root
 
     service health-hal-2-1-samsung /vendor/bin/hw/android.hardware.health@2.1-service-samsung
     class hal charger
@@ -64,17 +54,18 @@ service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service
     capabilities WAKE_ALARM
     file /dev/kmsg w
 
-    service keystore2 /system/bin/keystore2 /data/misc/keystore
+    service vendor.keymaster-4-0 /system/bin/hw/android.hardware.keymaster@4.0-service
+    interface android.hardware.keymaster@4.0::IKeymasterDevice default
     class early_hal
-    user keystore
-    group keystore readproc log 5666 5678
-    task_profiles ProcessCapacityHigh
+    user root
+    group root drmrpc
 
-on post-fs
-    mkdir /mnt/vendor/efs/DAK 0775 root root
-    restorecon -R /mnt/vendor/efs/DAK
-    chown root root /mnt/vendor/efs/DAK/gakkeybox
-    chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
+    service vendor.gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
+    class hal
+    user root
+    group root
 
-on post-fs-data
-    mkdir /data/vendor/keymaster 0775 root root
+    service vendor.sprd.hardware.trusty@1.0-service /system/bin/hw/vendor.sprd.hardware.trusty@1.0-service
+    class hal
+    user root
+    group root
