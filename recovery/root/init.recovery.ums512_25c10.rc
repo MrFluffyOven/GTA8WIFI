@@ -40,14 +40,14 @@ on late-fs
 on post-fs
     mkdir /mnt/vendor/efs/DAK 0775 root root
     restorecon -R /mnt/vendor/efs/DAK
-    chown system system /mnt/vendor/efs/DAK/gakkeybox
+    chown root root /mnt/vendor/efs/DAK/gakkeybox
     chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
 
     start health-hal-2-1-samsung
 on post-fs-data
     mkdir /data/vendor/keymaster 0775 root root
 
-    service health-hal-2-1-samsung /vendor/bin/hw/android.hardware.health@2.1-service-samsung
+    service health-hal-2-1-samsung /system/bin/hw/android.hardware.health@2.1-service-samsung
     class hal charger
     user root
     group root
