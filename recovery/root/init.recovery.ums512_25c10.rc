@@ -48,25 +48,25 @@ on post-fs
 on post-fs-data
     mkdir /data/vendor/keymaster 0775 root root
 
-    service health-hal-2-1-samsung /system/bin/hw/android.hardware.health@2.1-service-samsung
+    service health-hal-2-1-samsung /system/bin/android.hardware.health@2.1-service-samsung
     class hal charger
     user root
     group root
     capabilities WAKE_ALARM
     file /dev/kmsg w
 
-    service vendor.keymaster-4-0 /system/bin/hw/android.hardware.keymaster@4.0-service
+    service vendor.keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
     interface android.hardware.keymaster@4.0::IKeymasterDevice default
     class early_hal
     user root
     group root drmrpc
 
-    service vendor.gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
+    service vendor.gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trusty
     class hal
     user root
     group root
 
-    service vendor.sprd.hardware.trusty@1.0-service /system/bin/hw/vendor.sprd.hardware.trusty@1.0-service
+    service vendor.sprd.hardware.trusty@1.0-service /system/bin/vendor.sprd.hardware.trusty@1.0-service
     class hal
     user root
     group root
