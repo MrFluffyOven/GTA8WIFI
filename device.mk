@@ -1,9 +1,3 @@
-# Inherit from common AOSP config
-$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-
-# Include GSI keys
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 LOCAL_PATH := device/samsung/gta8wifi
 
 PRODUCT_PLATFORM := ums512
@@ -28,16 +22,21 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
-# Fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd \
-    android.hardware.fastboot@1.0-impl-mock \
-
+# Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libion \
-
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    libkeymaster4 \
+    libpuresoftkeymasterdevice \
+    libdmabufheap.so \
+    libsqlite.so \
+    libbinder.so \
+    libnativewindow.so \
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libsqlite.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libnativewindow.so \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

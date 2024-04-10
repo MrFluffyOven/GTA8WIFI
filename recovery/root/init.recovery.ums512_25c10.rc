@@ -44,6 +44,7 @@ on post-fs
     chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
 
     start health-hal-2-1-samsung
+
 on post-fs-data
     mkdir /data/vendor/keymaster 0775 root root
 
