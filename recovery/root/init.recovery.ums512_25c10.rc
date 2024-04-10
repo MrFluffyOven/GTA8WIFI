@@ -7,15 +7,6 @@ on early-fs
     start vendor.keymaster-4-0
     start vendor.gatekeeper-1-0
     start vendor.sprd.hardware.trusty@1.0-service
-    start vold
-    
-    on boot
-    mkdir /mnt/vendor/efs/prov 0770 root root
-    mkdir /mnt/vendor/efs/prov_data 0770 root root
-    mkdir /mnt/vendor/efs/prov_data/dev_root 0770 root root
-    mkdir /data/vendor/log/drk 0775 root log
-
-
 
 on fs
 
@@ -76,16 +67,3 @@ on post-fs-data
     class hal
     user root
     group root
-
-    service vold /system/bin/vold \
-        --blkid_context=u:r:blkid:s0 --blkid_untrusted_context=u:r:blkid_untrusted:s0 \
-        --fsck_context=u:r:fsck:s0 --fsck_untrusted_context=u:r:fsck_untrusted:s0
-    class core
-    ioprio be 2
-	## Frigatebird
-    socket frigate stream 0660 root root
-    task_profiles ProcessCapacityHigh
-    shutdown critical
-    group root reserved_disk
-    user root
-    reboot_on_failure reboot,vold-failed
