@@ -8,6 +8,12 @@ on early-fs
     start vendor.gatekeeper-1-0
     start vendor.sprd.hardware.trusty@1.0-service
     start vold
+    
+    on boot
+    mkdir /mnt/vendor/efs/prov 0770 root root
+    mkdir /mnt/vendor/efs/prov_data 0770 root root
+    mkdir /mnt/vendor/efs/prov_data/dev_root 0770 root root
+    mkdir /data/vendor/log/drk 0775 root log
 
 
 
@@ -83,4 +89,3 @@ on post-fs-data
     group root reserved_disk
     user root
     reboot_on_failure reboot,vold-failed
-
