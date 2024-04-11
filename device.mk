@@ -32,6 +32,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libnativewindow.so \
     libion.so \
     libxml2.so \
+    libnativehelper.so
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
@@ -40,7 +41,8 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnativewindow.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libnativehelper.so
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
