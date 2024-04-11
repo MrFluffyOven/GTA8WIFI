@@ -67,11 +67,3 @@ on post-fs-data
     class hal
     user root
     group root
-
-    on property:ro.crypto.state=unencrypted
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-
-on property:twrp.decrypt.done=true
-    stop keymaster-4-0
-    stop gatekeeper-1-0
