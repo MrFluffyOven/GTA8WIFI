@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
+    libkeymaster4_1support.so \
     libpuresoftkeymasterdevice \
     libdmabufheap.so \
     libsqlite.so \
@@ -32,9 +33,10 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libnativewindow.so \
     libion.so \
     libxml2.so \
-    libnativehelper.so
+    libnativehelper.so 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4_1support.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsqlite.so \
