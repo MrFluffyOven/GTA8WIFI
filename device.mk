@@ -24,7 +24,7 @@ PRODUCT_PACKAGES += \
 
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
-libdl.so \
+    libdl.so \
     libion \
     liblog.so \
     libdl.so \
