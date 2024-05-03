@@ -41,6 +41,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libbinder_ndk.so \
     libcppbor_external.so \
     libcppcose_rkp.so \
+    lib_android_keymaster_keymint_utils.so \
     android.hardware.keymaster@3.0.so \
     android.hardware.keymaster@4.0.so \
     android.hardware.keymaster@4.1.so \
@@ -65,6 +66,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor_external.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppcose_rkp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/lib_android_keymaster_keymint_utils.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
