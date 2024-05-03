@@ -13,6 +13,3 @@
     export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
 ## Multidisabler
     Boot twrp, Wipe data, Reboot Recovery, go to twrp terminal, type "multidisabler" hit enter/return , Wipe data again, Encryption should be Disabled
-
-## vbmeta (test)
-    boot fastboot: (fastboot --disable-verity --disable-verification flash vbmeta_system vbmeta_system.img) (fastboot --disable-verity --disable-verification flash vbmeta_vendor vbmeta_vendor.img)(fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img)
