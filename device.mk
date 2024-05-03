@@ -24,31 +24,34 @@ PRODUCT_PACKAGES += \
 
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
-    libkeymaster4_1support.so \
-    libpuresoftkeymasterdevice \
-    libdmabufheap.so \
-    libsqlite.so \
-    libbinder.so \
-    libnativewindow.so \
-    libion.so \
-    libxml2.so \
-    libnativehelper.so \
-    libm.so \
+libdl.so \
+    libion \
+    liblog.so \
     libdl.so \
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4_1support.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libsqlite.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libnativewindow.so \
+    libm.so \
+    libhidlbase.so \
+    libcrypto.so \
+    libbase.so \
+    libhidlmemory \
+    libhardware.so \
+    android.hardware.keymaster@3.0.so \
+    android.hardware.keymaster@4.0.so \
+    android.hardware.keymaster@4.1.so \
+    android.hardware.gatekeeper@1.0.so \
+RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libnativehelper.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libm.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdl.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libm.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlbase.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcrypto.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libbase.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0.so \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
