@@ -42,6 +42,13 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libcppbor_external.so \
     libcppcose_rkp.so \
     lib_android_keymaster_keymint_utils.so \
+    libkeymaster4.so \
+    libkeymint.so \
+    libpuresoftkeymasterdevice.so \
+    android.hidl.memory.token@1.0.so \
+    android.hidl.memory@1.0.so \
+    libkeymaster_messages.so \
+    libkeymaster_portable.so \
     android.hardware.keymaster@3.0.so \
     android.hardware.keymaster@4.0.so \
     android.hardware.keymaster@4.1.so \
@@ -67,6 +74,13 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor_external.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppcose_rkp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/lib_android_keymaster_keymint_utils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
