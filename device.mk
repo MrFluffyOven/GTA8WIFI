@@ -36,6 +36,10 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libhardware.so \
     libdmabufheap \
     libxml2 \
+    libcutils.so \
+    libutils.so \
+    libbinder_ndk.so \
+    libcppbor_external.so \
     android.hardware.keymaster@3.0.so \
     android.hardware.keymaster@4.0.so \
     android.hardware.keymaster@4.1.so \
@@ -55,6 +59,10 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhardware.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor_external.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
