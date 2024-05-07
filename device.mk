@@ -5,9 +5,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 LOCAL_PATH := device/samsung/gta8wifi
+# API levels
+PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Dynamic
 PRODUCT_PLATFORM := ums512
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Product characteristics
+PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -77,3 +83,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # tzdata
 PRODUCT_PACKAGES_ENG += \
     tzdata_twrp
+
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 30
