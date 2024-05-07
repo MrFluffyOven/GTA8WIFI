@@ -34,11 +34,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
-# fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
-    fastbootd
-
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
     libdl \
