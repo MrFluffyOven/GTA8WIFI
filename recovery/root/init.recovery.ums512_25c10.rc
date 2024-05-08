@@ -2,8 +2,10 @@
 import /init.recovery.common.rc
 
 # We need vold early for metadata encryption
-on early-fs
+on init
     start vold
+    start keymaster
+    start gatekeeper
     start vendor.gatekeeper-1-0
     start vendor.keymaster-4-0
 
@@ -14,13 +16,13 @@ on fs
     export ANDROID_ROOT /system_root
 
 on post-fs
-    mkdir /mnt/vendor/efs/DAK 0775 system system
+    mkdir /mnt/vendor/efs/DAK 0775 root root
     restorecon -R /mnt/vendor/efs/DAK
-    chown system system /mnt/vendor/efs/DAK/gakkeybox
+    chown root root /mnt/vendor/efs/DAK/gakkeybox
     chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
 
 on post-fs-data
-    mkdir /data/vendor/keymaster 0775 system system
+    mkdir /data/vendor/keymaster 0775 root root
 
 on late-fs
    … 
