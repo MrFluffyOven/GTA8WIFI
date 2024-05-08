@@ -26,7 +26,7 @@ on post-fs
 on post-fs-data
     mkdir /data/vendor/keymaster 0775 root root
 
-    service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service.mitee
+    service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
     user root
     group root drmrpc
     oneshot
