@@ -4,12 +4,23 @@ import /init.recovery.common.rc
 # We need vold early for metadata encryption
 on early-fs
     start vold
+    start vendor.gatekeeper-1-0
+    start vendor.keymaster-4-0
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     
     export ANDROID_ROOT /system_root
+
+on post-fs
+    mkdir /mnt/vendor/efs/DAK 0775 system system
+    restorecon -R /mnt/vendor/efs/DAK
+    chown system system /mnt/vendor/efs/DAK/gakkeybox
+    chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
+
+on post-fs-data
+    mkdir /data/vendor/keymaster 0775 system system
 
 on late-fs
    … 
@@ -18,3 +29,14 @@ on late-fs
 
     # Mount RW partitions which need run fsck
     mount_all /system/etc/recovery.fstab --late
+
+    service vendor.gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trusty
+    class hal
+    user root
+    group root
+
+    service vendor.keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
+    interface android.hardware.keymaster@4.0::IKeymasterDevice default
+    class early_hal
+    user root
+    group root drmrpc
