@@ -1,8 +1,12 @@
 # Add for board init.rc for recovery mode
 import /init.recovery.common.rc
+ on init
+    export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
+    setprop prepdecrypt.setpatch true
+    setprop prepdecrypt.loglevel 2
 
-# We need vold early for metadata encryption
-on init
+on boot
+    start health-hal-2-1
     start vold
     start keymaster
     start gatekeeper
