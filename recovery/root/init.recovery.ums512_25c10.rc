@@ -38,3 +38,6 @@ on post-fs-data
     group root
     disabled
     seclabel u:r:recovery:s0
+
+    on property:ro.build.version.security_patch=*
+    setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
