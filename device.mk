@@ -53,9 +53,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libbinder \
     libbinder_ndk \
     libcppbor \
-    android.hardware.health@1.0 \
-    android.hardware.health@2.0 \
-    android.hardware.health@2.1 \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
@@ -73,10 +70,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.health@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.health@2.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.health@2.1.so \
-
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
