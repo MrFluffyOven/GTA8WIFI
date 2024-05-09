@@ -60,6 +60,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.keymaster@4.0 \
     android.hardware.keymaster@4.1 \
     android.hardware.gatekeeper@1.0 \
+    android.hardware.security.keymint-V1-ndk \
+    android.hardware.security.keymint-V3-ndk.so
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
@@ -84,6 +86,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V3-ndk.so \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
