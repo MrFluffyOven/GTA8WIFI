@@ -1,8 +1,8 @@
 ## Recovery Device Tree for the Samsung Galaxy Tab A8 [SM-X200]
 
-# - Custom Kernel by [cd-Crypton](https://github.com/cd-Crypton)
-# - Contributor [Magendanz](https://github.com/Magendanz)
-# - Contributor [Maxim](https://github.com/maxim-root)
+# Custom Kernel by [cd-Crypton](https://github.com/cd-Crypton)
+# Contributor [Magendanz](https://github.com/Magendanz)
+# Contributor [Maxim](https://github.com/maxim-root)
 
 # How-to compile it:
 
