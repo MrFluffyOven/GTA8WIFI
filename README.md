@@ -14,5 +14,4 @@
     git clone https://github.com/MrFluffyOven/android_device_samsung_gta8wifi.git -b A14 device/samsung/gta8wifi
 ## build:
     export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
-## Multidisabler
-    Boot twrp, Wipe data, Reboot Recovery, go to twrp terminal, type "multidisabler" hit enter/return , Wipe data again, Encryption should be Disabled
+## [Kernel Tree](https://github.com/cd-Crypton/android_kernel_samsung_t618)
