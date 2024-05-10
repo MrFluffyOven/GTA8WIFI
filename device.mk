@@ -44,7 +44,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libhidlbase \
     libcrypto \
     libbase \
-    libhidlmemory \
+    libhidlmemory.so \
     libhardware \
     libdmabufheap \
     libxml2 \
