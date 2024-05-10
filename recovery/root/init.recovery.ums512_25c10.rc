@@ -24,6 +24,9 @@ on post-fs
     chown root root /mnt/vendor/efs/DAK/gakkeybox
     chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
 
+on factorytest
+    setprop vendor.sprd.tsupplicant.enabled 1
+
 on post-fs-data
     mkdir /data/vendor/keymaster 0775 root root
 
@@ -40,6 +43,14 @@ on post-fs-data
     group root
     disabled
     seclabel u:r:recovery:s0
+
+on property:vendor.sprd.tsupplicant.enabled=1
+    start vendor.tsupplicant
+
+    service vendor.tsupplicant /vendor/bin/tsupplicant firmware
+    class early_hal
+    user root
+    group root
 
     on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
