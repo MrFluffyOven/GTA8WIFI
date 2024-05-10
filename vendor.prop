@@ -5,7 +5,6 @@ ro.crypto.allow_encrypt_override=true
 ro.security.keystore.keytype=sakm,gak
 ro.hardware.keystore=mdfpp
 ro.crypto.volume.filenames_mode=aes-256-xts:aes-256-cts:v2
-ro.twrp.boot=1
 
 # USB
 vendor.usb.use_ffs_mtp=1
