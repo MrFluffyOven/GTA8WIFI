@@ -31,7 +31,7 @@ service logd-cali /system/bin/logd
 service vendor.wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -Dnl80211 -iwlan0 -c/data/vendor/wifi/wpa/wpa_supplicant.conf \
     -e/data/vendor/wifi/entropy.bin -g@android:wpa_wlan0 -dd
-    group system wifi inet keystore
+    group root wifi inet keystore
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
@@ -239,7 +239,7 @@ on fs
 
 on post-fs-data
     # We chown/chmod /data again so because mount is run as root + defaults
-    chown system system /data
+    chown root root /data
     chmod 0771 /data
     # We restorecon /data in case the userdata partition has been reset.
     restorecon /data
