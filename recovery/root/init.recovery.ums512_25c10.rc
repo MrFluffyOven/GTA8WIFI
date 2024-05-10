@@ -9,6 +9,8 @@ on boot
     start vold
     start keymaster-4-0
     start gatekeeper-1-0
+    start trusty
+    start tee
 
 on property:vendor.sprd.tsupplicant.enabled=1
     start vendor.tsupplicant
@@ -43,7 +45,13 @@ on post-fs-data
     group root
     seclabel u:r:recovery:s0
 
-    service vendor.tee_rpc /vendor/bin/tee_rpc
+    service trusty /system/bin/vendor.sprd.hardware.trusty@1.0-service
+    class hal
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+    service tee /vendor/bin/tee_rpc
     class core
     user root
     group root
