@@ -53,7 +53,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libbinder \
     libbinder_ndk \
     libcppbor \
-    android.hardware.keymaster@4.0
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
@@ -71,7 +70,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android_hardware_keymaster@4.0.so
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
