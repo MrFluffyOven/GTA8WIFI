@@ -30,14 +30,14 @@ on factorytest
 on post-fs-data
     mkdir /data/vendor/keymaster 0775 root root
 
-    service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service.trusty
+    service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
     user root
     group root drmrpc
     oneshot
     disabled
     seclabel u:r:recovery:s0
 
-    service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
+    service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trusty
     class hal
     user root
     group root
