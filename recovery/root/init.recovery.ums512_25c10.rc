@@ -49,6 +49,7 @@ on property:vendor.sprd.tsupplicant.enabled=1
     class early_hal
     user root
     group root
+    seclabel u:r:recovery:s0
 
     on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
