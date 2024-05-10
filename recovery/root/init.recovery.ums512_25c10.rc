@@ -7,8 +7,6 @@ on init
 on boot
     start health-hal-2-1
     start vold
-    start keymaster-4-0
-    start gatekeeper-1-0
     start trusty
     start tee
 
@@ -64,6 +62,25 @@ on post-fs-data
     group root readproc log
     task_profiles ProcessCapacityHigh
     seclabel u:r:recovery:s0
+
+on property:crypto.ready=1
+    start keymaster-4-0
+
+on property:hwservicemanager.ready=true
+    start keymaster-4-0
+    start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+
+on property:ro.crypto.state=unencrypted
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+
+on property:twrp.decrypt.done=true
+    stop keymaster-4-0
+    stop gatekeeper-1-0
 
 on factorytest
     setprop vendor.sprd.tsupplicant.enabled 1
