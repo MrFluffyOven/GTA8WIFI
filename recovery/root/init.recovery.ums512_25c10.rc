@@ -58,6 +58,13 @@ on post-fs-data
     seclabel u:r:tee:s0
     seclabel u:r:recovery:s0
 
+    service keystore2 /system/bin/keystore2 /data/misc/keystore
+    class early_hal
+    user root
+    group root readproc log
+    task_profiles ProcessCapacityHigh
+    seclabel u:r:recovery:s0
+
 on factorytest
     setprop vendor.sprd.tsupplicant.enabled 1
 
