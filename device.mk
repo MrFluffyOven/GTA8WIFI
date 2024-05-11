@@ -46,6 +46,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libbinder_ndk \
     libcppbor \
     libkeymaster4 \
+    libkeymaster41 \
     libkeymint \
     libpuresoftkeymasterdevice
 RECOVERY_LIBRARY_SOURCE_FILES += \
@@ -58,6 +59,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
