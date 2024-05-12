@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
+    android.hardware.health@2.1-service-samsung
 
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
@@ -46,7 +46,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libbinder_ndk \
     libcppbor \
     libkeymaster4 \
-    libkeymaster41 \
     libkeymint \
     libpuresoftkeymasterdevice
 RECOVERY_LIBRARY_SOURCE_FILES += \
@@ -59,7 +58,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
