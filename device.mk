@@ -36,27 +36,10 @@ PRODUCT_PACKAGES += \
 
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libdl \
-    libion \
-    liblog \
-    libhardware \
-    libdmabufheap \
-    libxml2 \
-    libbinder \
-    libbinder_ndk \
-    libcppbor \
     libkeymaster4 \
     libkeymint \
     libpuresoftkeymasterdevice
 RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
