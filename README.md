@@ -11,7 +11,7 @@
 ## Sync
     repo sync
 ## Clone Device Tree
-    git clone https://github.com/MrFluffyOven/android_device_samsung_gta8wifi.git -b android-14 device/samsung/gta8wifi
+    git clone https://github.com/MrFluffyOven/android_device_samsung_gta8wifi.git -b B002 device/samsung/gta8wifi
 ## build:
     export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gta8wifi-eng; mka recoveryimage
 ## [Kernel Tree](https://github.com/cd-Crypton/android_kernel_samsung_t618)
