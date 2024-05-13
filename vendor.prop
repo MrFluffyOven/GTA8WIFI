@@ -1,7 +1,7 @@
 # Crypto
 ro.crypto.metadata_init_delete_all_keys.enabled=false
 ro.crypto.dm_default_key.options_format.version=2
-#ro.crypto.allow_encrypt_override=true
+ro.crypto.allow_encrypt_override=true
 ro.security.keystore.keytype=sakm,gak
 ro.hardware.keystore=mdfpp
 ro.hardware.gatekeeper=mdfpp
