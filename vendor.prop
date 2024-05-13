@@ -6,6 +6,7 @@ ro.security.keystore.keytype=sakm,gak
 ro.hardware.keystore=mdfpp
 ro.hardware.gatekeeper=mdfpp
 ro.crypto.volume.filenames_mode=aes-256-cts:v2
+ro.boot.dynamic_partitions=true
 
 # USB
 vendor.usb.use_ffs_mtp=1
