@@ -47,6 +47,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libkeystore-attestation-application-id \
     android.hardware.security.keymint-V1-ndk \
     android.hardware.security.keymint-V3-ndk \
+    android.hardware.security.secureclock-V1-ndk \
+    android.hardware.security.sharedsecret-V1-ndk \
     android.hardware.keymaster@3.0 \
     android.hardware.keymaster@4.0 \
     android.hardware.keymaster@4.1 \
@@ -80,6 +82,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore-attestation-application-id \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V1-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V3-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.secureclock-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.sharedsecret-V1-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
