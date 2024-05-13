@@ -42,6 +42,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.memory@1.0 \
     android.hidl.memory.token@1.0 \
     android.hardware.security.keymint-V3-ndk \
+    android.hardware.keymaster@3.0 \
+    android.hardware.keymaster@4.1 \
     libdmabufheap \
     libhidlmemory \
     libion \
@@ -54,6 +56,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V3-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
