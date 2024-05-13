@@ -46,6 +46,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.keymaster@3.0 \
     android.hardware.keymaster@4.0 \
     android.hardware.keymaster@4.1 \
+    android.hardware.gatekeeper@1.0 \
     android.hardware.thermal@1.0.so \
     android.hardware.thermal@2.0.so \
     libsoft_attestation_cert \
@@ -69,6 +70,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.thermal@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.thermal@2.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
