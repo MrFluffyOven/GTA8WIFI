@@ -5,6 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 LOCAL_PATH := device/samsung/gta8wifi
+
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 
@@ -37,6 +38,7 @@ PRODUCT_PACKAGES += \
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
+    libgatekeeper \
     libpuresoftkeymasterdevice \
     android.hidl.allocator@1.0 \
     android.hidl.memory@1.0 \
@@ -61,6 +63,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libnetutils
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
