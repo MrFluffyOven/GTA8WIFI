@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += \
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
     libgatekeeper \
+    libgatekeeper_aidl \
     libkeymint \
     libkeymint_support \
     libkeystore2_aaid \
@@ -68,6 +69,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libsoft_attestation_cert \
     libdmabufheap \
     libdk_native_keymaster \
+    lib_native_client.dk.samsung \
+    lib_android_keymaster_keymint_utils \
     libhidlmemory \
     libcppbor_external \
     libcppcose_rkp \
@@ -84,6 +87,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper_aidl.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint_support.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore2_aaid.so \
@@ -113,6 +117,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdk_native_keymaster.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/lib_native_client.dk.samsung \
+    $(TARGET_OUT_SHARED_LIBRARIES)/lib_android_keymaster_keymint_utils \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor_external.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppcose_rkp.so \
