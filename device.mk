@@ -39,6 +39,10 @@ PRODUCT_PACKAGES += \
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
     libgatekeeper \
+    libkeystore2_aaid \
+    libkeystore2_crypto \
+    libkeystore-engine \
+    libkeystore2_apc_compat \
     libpuresoftkeymasterdevice \
     android.security.authorization-ndk.so \
     android.security.legacykeystore-ndk.so \
@@ -77,6 +81,10 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore2_aaid.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore2_crypto.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore-engine.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore2_apc_compat.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.security.authorization-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.security.legacykeystore-ndk.so \
