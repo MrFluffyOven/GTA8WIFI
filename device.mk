@@ -55,6 +55,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libcppcose_rkp \
     libion \
     libxml2 \
+    liblog \
+    libcrypto \
     libnetutils
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
@@ -76,6 +78,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcppcose_rkp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcrypto.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so 
 
 # Soong namespaces
