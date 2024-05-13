@@ -64,7 +64,9 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     liblog \
     libcrypto \
     libutils \
-    libnetutils
+    libnetutils \
+    android.system.keystore2-V1-ndk \
+    android.system.keystore2-V3-ndk
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
@@ -73,6 +75,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.system.wifi.keystore@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)//android.system.keystore-V3-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore-attestation-application-id \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V3-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
