@@ -45,6 +45,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.security.keymint-V3-ndk \
     android.hardware.keymaster@3.0 \
     android.hardware.keymaster@4.1 \
+    android.hardware.thermal@1.0.so \
+    android.hardware.thermal@2.0.so \
     libsoft_attestation_cert \
     libdmabufheap \
     libhidlmemory \
@@ -63,6 +65,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V3-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.thermal@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.thermal@2.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
