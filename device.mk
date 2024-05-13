@@ -39,6 +39,8 @@ PRODUCT_PACKAGES += \
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
     libgatekeeper \
+    libkeymint \
+    libkeymint_support \
     libkeystore2_aaid \
     libkeystore2_crypto \
     libkeystore-engine \
@@ -82,6 +84,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint_support.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore2_aaid.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore2_crypto.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore-engine.so \
