@@ -40,6 +40,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
     libgatekeeper \
     libpuresoftkeymasterdevice \
+    android.security.authorization-ndk.so \
+    android.security.legacykeystore-ndk.so \
     android.hidl.allocator@1.0 \
     android.hidl.memory@1.0 \
     android.hidl.memory.token@1.0 \
@@ -75,6 +77,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.security.authorization-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.security.legacykeystore-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
