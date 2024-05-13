@@ -41,11 +41,15 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.allocator@1.0 \
     android.hidl.memory@1.0 \
     android.hidl.memory.token@1.0 \
+    android.system.wifi.keystore@1.0 \
     android.hardware.security.keymint-V3-ndk \
     android.hardware.keymaster@3.0 \
     android.hardware.keymaster@4.1 \
+    libsoft_attestation_cert \
     libdmabufheap \
     libhidlmemory \
+    libcppbor_external \
+    libcppcose_rkp \
     libion \
     libxml2 \
     libnetutils
@@ -55,11 +59,15 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.wifi.keystore@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V3-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@3.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor_external.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcppcose_rkp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so 
