@@ -73,7 +73,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libxml2 \
     liblog \
     libcrypto \
-    libbinder_ndk.so \
+    libbinder \
+    libbinder_ndk \
     libutils \
     libnetutils \
     android.system.keystore2-V1-ndk \
@@ -115,6 +116,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcrypto.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore-V1-ndk.so \
