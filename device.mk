@@ -79,10 +79,13 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libxml2 \
     liblog \
     libcrypto \
+    libcrypto_utils \
     libbinder \
     libbinder_ndk \
     libutils \
     libnetutils \
+    libsce_v1.crypto.samsung \
+    libsamsung_keystore_utils \
     android.system.keystore2-V1-ndk \
     android.system.keystore2-V3-ndk
 RECOVERY_LIBRARY_SOURCE_FILES += \
@@ -128,9 +131,12 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcrypto.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcrypto_utils.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libbinder_ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libsce_v1.crypto.samsung.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libsamsung_keystore_utils.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore-V1-ndk.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore-V3-ndk.so 
 
