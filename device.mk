@@ -45,7 +45,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.memory.token@1.0 \
     android.system.wifi.keystore@1.0 \
     libkeystore-attestation-application-id \
-    android.hardware.security.keymint-V1-ndk.so] \
+    android.hardware.security.keymint-V1-ndk \
     android.hardware.security.keymint-V3-ndk \
     android.hardware.keymaster@3.0 \
     android.hardware.keymaster@4.0 \
