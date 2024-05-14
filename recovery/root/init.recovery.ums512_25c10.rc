@@ -8,7 +8,7 @@ on boot
     start health-hal-2-1
     start vold
     start trusty
-    start tee
+    start tee_rpc
     start keymaster-4-0
     start gatekeeper-1-0
 
