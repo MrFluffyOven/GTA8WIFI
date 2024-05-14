@@ -47,8 +47,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libkeystore-engine \
     libkeystore2_apc_compat \
     libpuresoftkeymasterdevice \
-    android.security.authorization-ndk.so \
-    android.security.legacykeystore-ndk.so \
+    android.security.authorization-ndk \
+    android.security.legacykeystore-ndk \
     android.hidl.allocator@1.0 \
     android.hidl.memory@1.0 \
     android.hidl.memory.token@1.0 \
@@ -64,8 +64,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.keymaster-V4-ndk \
     android.hardware.gatekeeper@1.0 \
     android.hardware.gatekeeper-V1-ndk \
-    android.hardware.thermal@1.0.so \
-    android.hardware.thermal@2.0.so \
+    android.hardware.thermal@1.0 \
+    android.hardware.thermal@2.0 \
     libsoft_attestation_cert \
     libdmabufheap \
     libdk_native_keymaster \
@@ -77,7 +77,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libcppcose_rkp \
     libion \
     libxml2 \
-    liblog \
     libcrypto \
     libcrypto_utils \
     libbinder \
@@ -87,7 +86,23 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libsce_v1.crypto.samsung \
     libsamsung_keystore_utils \
     android.system.keystore2-V1-ndk \
-    android.system.keystore2-V3-ndk
+    android.system.keystore2-V3-ndk \
+    libcutils \
+    android.hardware.security.rkp-V3-ndk \
+    libkeymaster_messages \
+    libkeymaster_portable \
+    libhardware \
+    libkeystore-attestation-application-id \
+    android.system.keystore2-V1-ndk \
+    android.hardware.confirmationui@1.0 \
+    android.hardware.confirmationui-V1-ndk \
+    liblog \
+    libhidlbase \
+    libkeymaster4support \
+    libkeymaster4_1support \
+    libbase \
+    libandroidicu \
+    libvndksupport \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
@@ -138,8 +153,24 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsce_v1.crypto.samsung.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsamsung_keystore_utils.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore-V1-ndk.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore-V3-ndk.so 
-
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore-V3-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.rkp-V3-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore-attestation-application-id.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore2-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.confirmationui@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.confirmationui-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlbase.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4support.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4_1support.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libbase.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libandroidicu.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libvndksupport.so \
+    
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
