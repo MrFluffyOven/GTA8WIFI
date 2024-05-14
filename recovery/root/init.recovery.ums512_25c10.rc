@@ -74,5 +74,11 @@ on factorytest
     task_profiles ProcessCapacityHigh
     seclabel u:r:recovery:s0
 
+    service tee_rpc /system/bin/tee_rpc
+    class core
+    user root
+    group root
+    seclabel u:r:tee:s0
+
     on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
