@@ -11,13 +11,13 @@ on boot
     start tee_rpc
     start keymaster-4-0
     start gatekeeper-1-0
-
+    start vendor.tsupplicant
+    start vendor.tsupplicant-cali
 
 on property:vendor.sprd.tsupplicant.enabled=1
-    start vendor.tsupplicant
-
+    
 on property:ro.bootmode=cali
-    start vendor.tsupplicant-cali
+    
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
