@@ -26,8 +26,8 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-#on early-init
-    #setprop sys.usb.configfs 1
+on early-init
+    setprop sys.usb.configfs 0
 
 on early-init
     mkdir /config
