@@ -37,7 +37,6 @@ PRODUCT_PACKAGES += \
 
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
     android.hidl.allocator@1.0 \
     libsoft_attestation_cert \
     libdmabufheap \
@@ -56,7 +55,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libandroidicu \
     libvndksupport \
 RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
