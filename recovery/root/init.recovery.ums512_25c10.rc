@@ -3,6 +3,8 @@ import /init.recovery.common.rc
 
 on init
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller "musb-hdrc"
 
 on boot
     start health-hal-2-1
