@@ -38,8 +38,25 @@ PRODUCT_PACKAGES += \
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
     libandroidicu \
+    libhidlbase.so \
+    liblog.so \
+    libutils.so \
+    libcutils.so \
+    libc++.so \
+    libc.so \
+    libm.so \
+    libdl.so \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libandroidicu.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlbase.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libc++.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libc.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libm.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdl.so \
+
     
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
