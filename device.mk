@@ -46,6 +46,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libc.so \
     libm.so \
     libdl.so \
+    libkeymint.so
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libandroidicu.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlbase.so \
@@ -56,6 +57,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libc.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libm.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdl.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so
 
     
 # Soong namespaces
