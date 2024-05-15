@@ -11,6 +11,7 @@ on boot
     start gatekeeper-1-0
     start vendor.tsupplicant
     start tee_rpc
+    start keystore2
     
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -63,6 +64,12 @@ service tee_rpc /system/bin/tee_rpc
     user root
     group root
     seclabel u:r:tee:s0
+
+service keystore2 /system/bin/keystore2 /data/misc/keystore
+    class early_hal
+    user keystore
+    group keystore readproc log 5666 5678
+    task_profiles ProcessCapacityHigh
 
     on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
