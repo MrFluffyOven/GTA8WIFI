@@ -26,10 +26,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on early-init
-    setprop sys.usb.configfs 1
+#on early-init
+    #setprop sys.usb.configfs 1
 
-on init
+on early-init
     mkdir /config
     mount configfs none /config
     mkdir /config/usb_gadget/g1
