@@ -67,9 +67,10 @@ service tee_rpc /system/bin/tee_rpc
 
 service keystore2 /system/bin/keystore2 /data/misc/keystore
     class early_hal
-    user keystore
-    group keystore readproc log 5666 5678
+    user root
+    group root readproc log 5666 5678
     task_profiles ProcessCapacityHigh
+    seclabel u:r:recovery:s0
 
     on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
