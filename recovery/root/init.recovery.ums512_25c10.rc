@@ -10,6 +10,7 @@ on boot
     start keymaster-4-0
     start gatekeeper-1-0
     start vendor.tsupplicant
+    start tee_rpc
     
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -56,6 +57,12 @@ service vendor.tsupplicant-cali /system/bin/tsupplicant firmware
     user root
     group root
     seclabel u:r:recovery:s0
+
+service tee_rpc /system/bin/tee_rpc
+    class core
+    user root
+    group root
+    seclabel u:r:tee:s0
 
     on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
