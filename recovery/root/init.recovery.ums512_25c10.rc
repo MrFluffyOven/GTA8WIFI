@@ -13,12 +13,7 @@ on boot
     start gatekeeper-1-0
     start vendor.tsupplicant
     start vendor.tsupplicant-cali
-
-on property:vendor.sprd.tsupplicant.enabled=1
     
-on property:ro.bootmode=cali
-    
-
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -53,9 +48,6 @@ service trusty /system/bin/vendor.sprd.hardware.trusty@1.0-service
     group root
     seclabel u:r:recovery:s0
 
-on factorytest
-    setprop vendor.sprd.tsupplicant.enabled 1
-
 service vendor.tsupplicant /system/bin/tsupplicant firmware
     class early_hal
     user root
@@ -66,13 +58,6 @@ service vendor.tsupplicant-cali /system/bin/tsupplicant firmware
     class cali
     user root
     group root
-    seclabel u:r:recovery:s0
-
-service keystore2 /system/bin/keystore2 /data/misc/keystore
-    class early_hal
-    user keystore
-    group keystore readproc log 5666 5678
-    task_profiles ProcessCapacityHigh
     seclabel u:r:recovery:s0
 
 service tee_rpc /system/bin/tee_rpc
