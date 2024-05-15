@@ -38,40 +38,10 @@ PRODUCT_PACKAGES += \
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.allocator@1.0 \
-    libsoft_attestation_cert \
-    libdmabufheap \
-    libhidlmemory \
-    libion \
-    libxml2 \
-    libcrypto \
-    libcrypto_utils \
-    libutils \
-    libnetutils \
-    libcutils \
-    libhardware \
-    liblog \
-    libhidlbase \
-    libbase \
     libandroidicu \
-    libvndksupport \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/liblog.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcrypto.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcrypto_utils.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcutils.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libutils.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlbase.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libbase.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libandroidicu.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libvndksupport.so \
     
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
