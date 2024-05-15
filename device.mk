@@ -47,7 +47,13 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libm.so \
     libdl.so \
     libkeymint.so \
-    libkeymaster4.so
+    libkeymaster4.so \
+    android.system.keystore2-V1-ndk.so \
+    android.system.keystore2-V3-ndk.so \
+    android.hardware.security.keymint-V1-ndk.so \
+    android.hardware.security.keymint-V3-ndk.so \
+    android.hardware.security.keymint-V1-cpp.so \
+    libkeystore-attestation-application-id.so \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libandroidicu.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlbase.so \
@@ -59,7 +65,13 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libm.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdl.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore2-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.keystore2-V3-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V3-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V1-cpp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeystore-attestation-application-id.so \
 
     
 # Soong namespaces
