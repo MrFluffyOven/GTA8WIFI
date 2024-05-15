@@ -39,10 +39,6 @@ PRODUCT_PACKAGES += \
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
     android.hidl.allocator@1.0 \
-    android.hidl.memory@1.0 \
-    android.hidl.memory.token@1.0 \
-    android.hardware.thermal@1.0 \
-    android.hardware.thermal@2.0 \
     libsoft_attestation_cert \
     libdmabufheap \
     libhidlmemory \
@@ -62,10 +58,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.thermal@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.thermal@2.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
