@@ -27,7 +27,7 @@
 #
 
 on early-init
-    setprop sys.usb.configfs 0
+    setprop sys.usb.configfs 1
 
 on init
     mkdir /config
