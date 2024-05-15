@@ -1,23 +1,20 @@
 # Add for board init.rc for recovery mode
 import /init.recovery.common.rc
  
-on init
-    export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
-
-    service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
+service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
     interface android.hardware.keymaster@4.0::IKeymasterDevice default
     class early_hal
     user root
     group root drmrpc
     seclabel u:r:recovery:s0
 
-    service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trusty
+service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trusty
     class hal
     user root
     group root
     seclabel u:r:recovery:s0
 
-    service trusty /system/bin/vendor.sprd.hardware.trusty@1.0-service
+service trusty /system/bin/vendor.sprd.hardware.trusty@1.0-service
     class hal
     user root
     group root
@@ -26,30 +23,33 @@ on init
 on factorytest
     setprop vendor.sprd.tsupplicant.enabled 1
 
-    service vendor.tsupplicant /system/bin/tsupplicant firmware
+service vendor.tsupplicant /system/bin/tsupplicant firmware
     class early_hal
     user root
     group root
     seclabel u:r:recovery:s0
 
-    service vendor.tsupplicant-cali /system/bin/tsupplicant firmware
+service vendor.tsupplicant-cali /system/bin/tsupplicant firmware
     class cali
     user root
     group root
     seclabel u:r:recovery:s0
 
-    service keystore2 /system/bin/keystore2 /data/misc/keystore
+service keystore2 /system/bin/keystore2 /data/misc/keystore
     class early_hal
     user keystore
     group keystore readproc log 5666 5678
     task_profiles ProcessCapacityHigh
     seclabel u:r:recovery:s0
 
-    service tee_rpc /system/bin/tee_rpc
+service tee_rpc /system/bin/tee_rpc
     class core
     user root
     group root
     seclabel u:r:tee:s0
+
+on init
+    export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
 
 on boot
     start health-hal-2-1
