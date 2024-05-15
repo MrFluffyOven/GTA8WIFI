@@ -3,36 +3,6 @@ import /init.recovery.common.rc
  
 on init
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
-    
-on boot
-    start health-hal-2-1
-    start vold
-    start trusty
-    start tee_rpc
-    start keymaster-4-0
-    start gatekeeper-1-0
-    start vendor.tsupplicant
-    start vendor.tsupplicant-cali
-
-on property:vendor.sprd.tsupplicant.enabled=1
-    
-on property:ro.bootmode=cali
-    
-
-on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    
-    export ANDROID_ROOT /system_root
-
-on post-fs
-    mkdir /mnt/vendor/efs/DAK 0775 root root
-    restorecon -R /mnt/vendor/efs/DAK
-    chown root root /mnt/vendor/efs/DAK/gakkeybox
-    chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
-
-on post-fs-data
-    mkdir /data/vendor/keymaster 0775 root root
 
     service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service
     interface android.hardware.keymaster@4.0::IKeymasterDevice default
@@ -80,6 +50,36 @@ on factorytest
     user root
     group root
     seclabel u:r:tee:s0
+
+on boot
+    start health-hal-2-1
+    start vold
+    start trusty
+    start tee_rpc
+    start keymaster-4-0
+    start gatekeeper-1-0
+    start vendor.tsupplicant
+    start vendor.tsupplicant-cali
+
+on property:vendor.sprd.tsupplicant.enabled=1
+    
+on property:ro.bootmode=cali
+    
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    
+    export ANDROID_ROOT /system_root
+
+on post-fs
+    mkdir /mnt/vendor/efs/DAK 0775 root root
+    restorecon -R /mnt/vendor/efs/DAK
+    chown root root /mnt/vendor/efs/DAK/gakkeybox
+    chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
+
+on post-fs-data
+    mkdir /data/vendor/keymaster 0775 root root
 
     on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
