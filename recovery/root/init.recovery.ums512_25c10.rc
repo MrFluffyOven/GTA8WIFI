@@ -1,6 +1,10 @@
 # Add for board init.rc for recovery mode
 import /init.recovery.common.rc
 
+# We need vold early for metadata encryption
+on early-fs
+    start vold
+
 on init
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
         # unlink /efs > /mnt/vendor/efs
@@ -15,6 +19,7 @@ on boot
     start tee_rpc
     start keystore2
     start sem_hal
+    start wpa_supplicant
     
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -23,6 +28,14 @@ on fs
     mount ext4 /dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist
 
     export ANDROID_ROOT /system_root
+
+on late-fs
+   … 
+    # Wait for keymaster
+    exec_start wait_for_keymaster
+
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.${ro.boot.hardware.platform} --late
 
 on post-fs
     mkdir /mnt/vendor/efs/DAK 0775 root root
@@ -84,13 +97,22 @@ service sem_daemon /system/bin/sem_daemon
     disabled
     seclabel u:r:recovery:s0
 
-    service sem_hal /vendor/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
+service sem_hal /vendor/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
     interface vendor.samsung.hardware.security.sem@1.0::ISehSem default
     user root
     group root
     oneshot
     disabled
     seclabel u:r:recovery:s0
+
+service wpa_supplicant /vendor/bin/hw/wpa_supplicant
+    interface vendor.samsung.hardware.wifi.supplicant@3.0::ISehSupplicant default
+    user root
+    group root inet keystore
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
