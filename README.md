@@ -3,6 +3,7 @@
 - Custom Kernel by [cd-Crypton](https://github.com/cd-Crypton)
 - Contributor [Magendanz](https://github.com/Magendanz)
 - Contributor [Maxim](https://github.com/maxim-root)
+- Contributor [Noki](https://github.com/nokidevz)
 
 # How-to compile it:
 
