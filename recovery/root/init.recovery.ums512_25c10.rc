@@ -7,8 +7,7 @@ on early-fs
 
 on init
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
-        # unlink /efs > /mnt/vendor/efs
-    rm /efs
+    rm -rf /efs
     mkdir /efs
     mkdir /sec_efs
 
@@ -22,20 +21,9 @@ on boot
     start wpa_supplicant
     
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mkdir /mnt/vendor/persist 0700 root root
     mount ext4 /dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist
-
-    export ANDROID_ROOT /system_root
-
-on late-fs
-   … 
-    # Wait for keymaster
-    exec_start wait_for_keymaster
-
-    # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.${ro.boot.hardware.platform} --late
 
 on post-fs
     mkdir /mnt/vendor/efs/DAK 0775 root root
@@ -103,14 +91,6 @@ service sem_hal /system/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
     group root
     oneshot
     disabled
-    seclabel u:r:recovery:s0
-
-service wpa_supplicant /system/bin/hw/wpa_supplicant
-    interface vendor.samsung.hardware.wifi.supplicant@3.0::ISehSupplicant default
-    user root
-    group root inet keystore
-    disabled
-    oneshot
     seclabel u:r:recovery:s0
 
 
