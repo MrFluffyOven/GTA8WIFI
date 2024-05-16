@@ -76,12 +76,20 @@ service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-tr
     disabled
     seclabel u:r:recovery:s0
 
+service sem_daemon /system/bin/sem_daemon
+    user root
+    group root nfc
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
 on property:hwservicemanager.ready=true
     start keymaster-4-0
     start gatekeeper-1-0
+    start sem_daemon
 
 on property:vendor.sys.listener.registered=true
     start keymaster-4-0
