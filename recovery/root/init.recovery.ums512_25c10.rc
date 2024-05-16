@@ -83,7 +83,7 @@ service keystore2 /system/bin/keystore2 /data/misc/keystore
     disabled
     seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-trusty
+service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service-trusty
     interface android.hardware.gatekeeper@1.0::IGatekeeper default
     user root
     group root
@@ -97,7 +97,7 @@ service sem_daemon /system/bin/sem_daemon
     disabled
     seclabel u:r:recovery:s0
 
-service sem_hal /vendor/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
+service sem_hal /system/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
     interface vendor.samsung.hardware.security.sem@1.0::ISehSem default
     user root
     group root
@@ -105,7 +105,7 @@ service sem_hal /vendor/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
     disabled
     seclabel u:r:recovery:s0
 
-service wpa_supplicant /vendor/bin/hw/wpa_supplicant
+service wpa_supplicant /system/bin/hw/wpa_supplicant
     interface vendor.samsung.hardware.wifi.supplicant@3.0::ISehSupplicant default
     user root
     group root inet keystore
