@@ -5,3 +5,4 @@ ro.product.system.device=gta8wifi
 ro.product.system.manufacturer=samsung
 ro.product.system.model=SM-X200
 ro.boot.bootdevice=7824900.sdhci
+ro.boot.hardware.platform=ums512_25c10
