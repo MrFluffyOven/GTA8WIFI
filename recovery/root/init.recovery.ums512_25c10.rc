@@ -14,6 +14,7 @@ on boot
     start vendor.tsupplicant
     start tee_rpc
     start keystore2
+    start sem_hal
     
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -79,6 +80,14 @@ service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-tr
 service sem_daemon /system/bin/sem_daemon
     user root
     group root nfc
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
+    service sem_hal /vendor/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
+    interface vendor.samsung.hardware.security.sem@1.0::ISehSem default
+    user root
+    group root
     oneshot
     disabled
     seclabel u:r:recovery:s0
