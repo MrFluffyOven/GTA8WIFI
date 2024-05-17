@@ -41,7 +41,7 @@ libhidlmemory.so \
 android.hidl.memory@1.0 \
 android.hidl.memory.token@1.0 
 RECOVERY_LIBRARY_SOURCE_FILES += \
- $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so
+ $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
  $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
  $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so 
 
