@@ -1,10 +1,6 @@
 # Add for board init.rc for recovery mode
 import /init.recovery.common.rc
 
-# We need vold early for metadata encryption
-on early-fs
-    start vold
-
 on init
     export LD_LIBRARY_PATH /system/lib64:/system/lib64/hw:/vendor/lib64:/vendor/lib64/hw
         # unlink /efs > /mnt/vendor/efs
@@ -18,9 +14,11 @@ on boot
     start vendor.tsupplicant
     start tee_rpc
     start keystore2
-    start sem_hal
-    start wpa_supplicant
-    
+
+# We need vold early for metadata encryption
+on early-fs
+    start vold
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -89,30 +87,6 @@ service gatekeeper-1-0 /system/bin/hw/android.hardware.gatekeeper@1.0-service-tr
     group root
     disabled
     seclabel u:r:recovery:s0
-
-service sem_daemon /system/bin/sem_daemon
-    user root
-    group root nfc
-    oneshot
-    disabled
-    seclabel u:r:recovery:s0
-
-service sem_hal /system/bin/hw/vendor.samsung.hardware.security.sem@1.0-service
-    interface vendor.samsung.hardware.security.sem@1.0::ISehSem default
-    user root
-    group root
-    oneshot
-    disabled
-    seclabel u:r:recovery:s0
-
-service wpa_supplicant /system/bin/hw/wpa_supplicant
-    interface vendor.samsung.hardware.wifi.supplicant@3.0::ISehSupplicant default
-    user root
-    group root inet keystore
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
-
 
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
