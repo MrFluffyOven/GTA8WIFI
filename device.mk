@@ -35,6 +35,12 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service-samsung
     
+# Additional target Libraries
+TARGET_RECOVERY_DEVICE_MODULES += \
+libhidlmemory.so
+RECOVERY_LIBRARY_SOURCE_FILES += \
+ $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
